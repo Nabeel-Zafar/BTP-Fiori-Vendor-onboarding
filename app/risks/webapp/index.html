@@ -22,14 +22,26 @@
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted"
     ></script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.App({
+                pages: [
+                    new sap.ui.view({
+                        id: "app",
+                        viewName: "ns.risks.MainView",
+                        type: sap.ui.core.mvc.ViewType.XML
+                    }),
+                    new sap.ui.view({
+                        id: "customView",
+                        viewName: "ns.risks.CustomView", // Reference your custom view
+                        type: sap.ui.core.mvc.ViewType.XML
+                    })
+                ]
+            }).placeAt("content");
+        }); 
+    </script>
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
-    <div
-        data-sap-ui-component
-        data-name="ns.risks"
-        data-id="container"
-        data-settings='{"id" : "ns.risks"}'
-        data-handle-validation="true"
-    ></div>
+    <!-- <h1 id="app">Hello!</h1> -->
 </body>
 </html>

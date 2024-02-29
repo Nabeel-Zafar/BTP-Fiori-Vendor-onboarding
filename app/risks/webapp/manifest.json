@@ -43,7 +43,12 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "rootView": {
+      "viewName": "ns.risks.MainView",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+  },
     "dependencies": {
       "minUI5Version": "1.120.8",
       "libs": {
@@ -83,50 +88,36 @@
       "css": []
     },
     "routing": {
-      "config": {},
-      "routes": [
-        {
-          "pattern": ":?query:",
-          "name": "RisksList",
-          "target": "RisksList"
-        },
-        {
-          "pattern": "Risks({key}):?query:",
-          "name": "RisksObjectPage",
-          "target": "RisksObjectPage"
-        }
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ns.risks",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+    },
+    "routes": [
+      {
+          "pattern": "",
+          "name": "mainRoute",
+          "target": "mainView"
+      },
+      {
+          "pattern": "custom",
+          "name": "customViewRoute",
+          "target": "customView"
+      }
       ],
       "targets": {
-        "RisksList": {
-          "type": "Component",
-          "id": "RisksList",
-          "name": "sap.fe.templates.ListReport",
-          "options": {
-            "settings": {
-              "contextPath": "/Risks",
-              "variantManagement": "Page",
-              "navigation": {
-                "Risks": {
-                  "detail": {
-                    "route": "RisksObjectPage"
-                  }
-                }
-              }
-            }
-          }
+        "mainView": {
+            "viewName": "MainView",
+            "viewLevel": 1
         },
-        "RisksObjectPage": {
-          "type": "Component",
-          "id": "RisksObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/Risks"
-            }
-          }
+        "customView": {
+            "viewName": "CustomView",
+            "viewLevel": 2
         }
-      }
+    }
     }
   },
   "sap.fiori": {
