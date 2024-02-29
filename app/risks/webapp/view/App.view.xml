@@ -1,0 +1,25 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
+  <Page id="loginPage" showHeader="false">
+<FlexBox justifyContent="Center" alignItems="Center" width="100%" class="sapUiMediumMarginTop sapUiTinyMarginBegin">
+      <Image src="../images/logo.png" />
+      </FlexBox>
+<FlexBox justifyContent="Center" alignContent="Center">
+      <FlexBox justifyContent="Center" alignItems="Center" width="70%" class="br-10 sapUiMediumMarginTopBottom sapUiContentPadding">
+      <FlexBox justifyContent="Center" direction="Column" alignItems="Center" width="100%">
+      <GenericTile class="adminportal sapUiTinyMarginTop sapUiMediumMarginTopBottom tileLayout portalslogin" header="Admin"
+      subheader="View Admin Portal" press="onNavigate('Home')">
+      <TileContent footer="Click to Continue">
+      <ImageContent src="sap-icon://key-user-settings" class="adminportalicon" />
+      </TileContent>
+      </GenericTile>
+      <GenericTile class="customerportal sapUiTinyMarginTop tileLayout portalslogin" header="Customer"
+      subheader="View Customer Portal" press="onNavigate('Custom')">
+      <TileContent footer="Click to Continue">
+      <ImageContent src="sap-icon://home-share" class="customerportalicon" />
+      </TileContent>
+      </GenericTile>
+      </FlexBox>
+      </FlexBox>
+</FlexBox>
+  </Page>
+</mvc:View>
