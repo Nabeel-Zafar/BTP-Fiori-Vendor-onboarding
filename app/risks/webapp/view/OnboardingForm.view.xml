@@ -1,5 +1,214 @@
 <mvc:View
    xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc">
-   <Text text="Onboarding Form"/>
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:core="sap.ui.core"
+   displayBlock="true"
+   controllerName="ns.risks.controller.OnboardingForm"
+>
+   <Page id="page">
+      <content>
+         <HBox
+            id="_IDGenHox1a"
+            alignItems="Center"
+            justifyContent="Center"
+            class="sapUiLargeMarginBottom sapUiMediumMarginTop"
+         >
+            <VBox
+               id="_IDGenVox2a"
+               class="sapUiSmallMargin titleLayout79"
+            >
+               <Title
+                  text="Vendor On-boarding Form"
+                  id="_IDGenText1"
+                  level="H1"
+               />
+            </VBox>
+         </HBox>
+
+         <FlexBox
+            id="_IDGenVBox1"
+            width="100%"
+            justifyContent="Center"
+            alignContent="Center"
+            height="100%"
+         >
+            <VBox
+               alignItems="Center"
+               width="100%"
+               class="login-container"
+            >
+               <HBox
+                  id="_IDGenHBox1"
+                  class="sapUiMediumMarginBottom"
+               >
+                  <Input
+                     id="company_name"
+                     width="250px"
+                     placeholder="Name"
+                     class="sapUiSmallMarginEnd"
+                  />
+                  <Input
+                     id="company_address"
+                     width="250px"
+                     placeholder="Address"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="registration_number"
+                     type="Number"
+                     width="250px"
+                     placeholder="Registration Number"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <ComboBox
+                     id="company_type"
+                     width="250px"
+                     placeholder="Company type"
+                     items="{
+					      path: 'companyTypes>/companyTypes',
+					      sorter: { path: 'text' }
+				      }"
+                  >
+                     <core:Item
+                        key="{companyTypes>key}"
+                        text="{companyTypes>text}"
+                     />
+                  </ComboBox>
+               </HBox>
+
+               <HBox
+                  id="_IDGenHBox2"
+                  class="sapUiMediumMarginBottom"
+               >
+                  <Input
+                     id="tax_number"
+                     width="250px"
+                     placeholder="Tax Identification Number"
+                     type="Number"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="contact_person_name"
+                     width="250px"
+                     placeholder="Contact person name"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="contact_person_email"
+                     width="250px"
+                     placeholder="Contact person email"
+                     type="Email"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <ComboBox
+                     width="250px"
+                     id="industry"
+                     placeholder="Industry/Category"
+                     items="{
+					      path: 'industry>/industry',
+					      sorter: { path: 'text' }
+				      }"
+                  >
+                     <core:Item
+                        key="{industry>key}"
+                        text="{industry>text}"
+                     />
+                  </ComboBox>
+               </HBox>
+
+               <HBox
+                  id="_IDGenHBox4"
+                  class="sapUiMediumMarginBottom"
+               >
+                  <Input
+                     id="contact_person_number"
+                     width="250px"
+                     placeholder="Contact Phone Number"
+                     type="Number"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="bank_name"
+                     width="250px"
+                     placeholder="Bank Name"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="bank_account_number"
+                     width="250px"
+                     placeholder="Bank Account Number"
+                     type="Number"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="license_number"
+                     width="250px"
+                     placeholder="Business License Number"
+                     type="Number"
+                  />
+               </HBox>
+
+               <HBox
+                  id="_IDGenHBox5"
+                  class="sapUiLargeMarginBottom"
+               >
+                  <TextArea
+                     id="service_offering"
+                     rows="5"
+                     placeholder="Product/Service Offering"
+                     width="250px"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <TextArea
+                     id="service_description"
+                     rows="5"
+                     placeholder="Product/Service Description"
+                     width="250px"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <TextArea
+                     id="additional_comments"
+                     rows="5"
+                     placeholder="Additional Comments"
+                     width="250px"
+                     class="sapUiSmallMarginEnd"
+                  />
+
+                  <Input
+                     id="reference"
+                     width="250px"
+                     placeholder="Reference"
+                  />
+               </HBox>
+
+               <HBox
+                  id="_IDGenHBox3"
+                  direction="Row"
+               >
+                  <VBox
+                     id="_IDGenVBox7"
+                     class="sapUiSmallMarginEnd"
+                  >
+                     <Button
+                        text="Submit"
+                        type="Accept"
+                        class="sapUiSmallMargin"
+                        press="onSubmit"
+                     />
+                  </VBox>
+               </HBox>
+            </VBox>
+         </FlexBox>
+      </content>
+   </Page>
 </mvc:View>
