@@ -75,7 +75,7 @@ sap.ui.define([
     var xhr = new XMLHttpRequest();
     
     // Define the endpoint URL of your CAP application
-    var url = "http://localhost:4004/odata/v4/service/risk/VendorOnboardingForm"; // Replace with your actual CAP application URL
+    var url = "http://localhost:4004/odata/v4/vendor/Vendor"; // Replace with your actual CAP application URL
     
     // Configure the request
     xhr.open("POST", url, true);
