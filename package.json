@@ -19,5 +19,18 @@
   },
   "sapux": [
     "app/risks"
-  ]
+  ],
+  "cds": {
+    "requires": {
+        "db": {
+            "kind": "sql"
+        }
+    },
+    "impl": "./srv/onboarding-form.js",
+    "routes": {
+        "/api/vendors": {
+            "target": "sap.ui.riskmanagement.VendorOnboardingForm"
+        }
+    }
+}
 }

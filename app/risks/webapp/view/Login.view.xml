@@ -1,11 +1,24 @@
-<mvc:View
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    controllerName="ns.risks.controller.Login">
-    <Page title="Login">
-        <content>
-            <Text text="Login View"/>
-            <Button text="Login" press="onLoginButtonPress"/>
-        </content>
-    </Page>
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" controllerName="ns.risks.controller.Login">
+   <App>
+      <pages>
+         <Page id="page" showHeader="false">
+            <content>
+               <FlexBox justifyContent="Center" alignItems="Center" height="100%">
+                  <VBox alignItems="Center" width="100%" class="login-container">
+                     <Button icon="sap-icon://customer" text="Login" class="sapUiLargeMarginBottom"/>
+                     <HBox class="sapUiSmallMarginBottom">
+                        <Input width="200px" showClearIcon="true" placeholder="Username" />
+                     </HBox>
+                     <HBox class="input-container" >
+                        <Input width="200px" type="Password" placeholder="Password" showClearIcon="false" showValueHelp="true" />
+                     </HBox>
+                     <FlexBox justifyContent="Center" class="login-button-container">
+                        <Button text="Login" type="Accept" class="sapUiSmallMargin" press="toOnboardingForm" />
+                     </FlexBox>
+                  </VBox>
+               </FlexBox>
+            </content>
+         </Page>
+      </pages>
+   </App>
 </mvc:View>

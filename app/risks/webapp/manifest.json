@@ -44,7 +44,7 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "ns.risks.MainView",
+      "viewName": "ns.risks.view.Login",
       "type": "XML",
       "async": true,
       "id": "app"
@@ -85,7 +85,9 @@
       }
     },
     "resources": {
-      "css": []
+      "css": [{
+        "uri": "css/LoginStyle.css"
+      }]
     },
     "routing": {
       "config": {
@@ -103,9 +105,9 @@
           "target": "mainView"
       },
       {
-          "pattern": "custom",
-          "name": "customViewRoute",
-          "target": "customView"
+          "pattern": "vendoronboardingform",
+          "name": "OnboardingForm",
+          "target":[ "OnboardingForm"]
       }
       ],
       "targets": {
@@ -113,9 +115,12 @@
             "viewName": "MainView",
             "viewLevel": 1
         },
-        "customView": {
-            "viewName": "CustomView",
-            "viewLevel": 2
+        "OnboardingForm": {
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewName": "OnboardingForm",
+          "viewId": "OnboardingForm"
         }
     }
     }
