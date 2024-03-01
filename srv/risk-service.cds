@@ -6,3 +6,10 @@ service RiskService {
   entity Mitigations as projection on my.Mitigations;
     annotate Mitigations with @odata.draft.enabled;
 }
+ 
+using { sap.ui.riskmanagement as form } from '../db/onboardingSchema';
+@path: 'service/risk'
+service VendorOnboardingFormService {
+  entity VendorOnboardingForm as projection on form.VendorOnboardingForm;
+    annotate VendorOnboardingForm with @odata.draft.enabled;
+}
