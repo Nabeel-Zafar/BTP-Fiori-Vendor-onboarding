@@ -1,7 +1,6 @@
 namespace sap.ui.riskmanagement;
 using { managed, cuid } from '@sap/cds/common';
 entity VendorOnboardingForm : managed, cuid{
-    key ID                  : Integer;
     company_name            : String;
     company_address         : String;
     registration_number     : String;

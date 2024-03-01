@@ -4,6 +4,6 @@ sap.ui.define([
 	"use strict";
 
 	XMLView.create({
-		viewName: "ns.risks.view.OnboardingForm"
+		viewName: "ns.risks.view.UserForm"
 	}).then((oView) => oView.placeAt("content"));    
 });
