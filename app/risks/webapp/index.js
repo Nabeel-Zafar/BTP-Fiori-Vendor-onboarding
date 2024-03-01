@@ -4,6 +4,6 @@ sap.ui.define([
 	"use strict";
 
 	XMLView.create({
-		viewName: "ns.risks.view.Login"
+		viewName: "ns.risks.view.Dashboard"
 	}).then((oView) => oView.placeAt("content"));    
 });

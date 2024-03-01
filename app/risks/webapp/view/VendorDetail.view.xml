@@ -1,0 +1,12 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="ns.risks.controller.VendorDetail">
+    <Page title="Vendor Details">
+        <content>
+            <!-- Display all the details of the selected vendor here -->
+            <Text text="{vendorModel>/SelectedVendor/Status}" />
+            <!-- Add more controls to display other vendor details -->
+        </content>
+    </Page>
+</mvc:View>
