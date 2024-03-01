@@ -34,34 +34,26 @@ sap.ui.define([
 
             console.log("userForm", userForm);
 
-            // Create a new HTTP request
-    // var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     
-    // Define the endpoint URL of your CAP application
-    // var url = "http://localhost:4004/odata/v4/vendor/Vendor"; Replace with your actual CAP application URL
+    var url = "http://localhost:4004/odata/v4/user/User"; 
     
-    // Configure the request
-    // xhr.open("POST", url, true);
-    // xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
     
-    // Define a callback function to handle the response
-    // xhr.onreadystatechange = function() {
-    //     if (xhr.readyState === XMLHttpRequest.DONE) {
-    //         if (xhr.status === 200) {
-                // Request successful
-                // console.log("Data sent successfully to CAP application.");
-            // } else {
-                // Request failed
-                // console.error("Failed to send data to CAP application. Status code: " + xhr.status);
-            // }
-        // }
-    // };
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log("Data sent successfully to CAP application.");
+            } else {
+                console.error("Failed to send data to CAP application. Status code: " + xhr.status);
+            }
+        }
+    };
     
-    // Convert the data to JSON format
-    // var jsonData = JSON.stringify(vendorOnboardingForm);
+    var jsonData = JSON.stringify(userForm);
     
-    // Send the request with the data
-    // xhr.send(jsonData);
+    xhr.send(jsonData);
 
         }
     });
