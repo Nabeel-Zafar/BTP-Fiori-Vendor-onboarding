@@ -84,12 +84,14 @@ sap.ui.define([
     // Define a callback function to handle the response
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
+            if (xhr.status === 200 || 201) {
                 // Request successful
-                console.log("Data sent successfully to CAP application.");
+                this.clearFormFields();
+                alert("Data sent successfully to CAP application.");
             } else {
                 // Request failed
-                console.error("Failed to send data to CAP application. Status code: " + xhr.status);
+                this.clearFormFields();
+                alert("Failed to send data to CAP application. Status code: " + xhr.status);
             }
         }
     };
@@ -99,6 +101,26 @@ sap.ui.define([
     
     // Send the request with the data
     xhr.send(jsonData);
+
+        },
+
+        clearFormFields(){
+            this.byId("company_name").setValue("");
+            this.byId("company_address").setValue("");
+            this.byId("registration_number").setValue("");
+            this.byId("company_type").setValue("");
+            this.byId("tax_number").setValue("");
+            this.byId("contact_person_name").setValue("");
+            this.byId("contact_person_email").setValue("");
+            this.byId("industry").setValue("");
+            this.byId("contact_person_number").setValue("");
+            this.byId("bank_name").setValue("");
+            this.byId("bank_account_number").setValue("");
+            this.byId("license_number").setValue("");
+            this.byId("service_offering").setValue("");
+            this.byId("service_description").setValue("");
+            this.byId("additional_comments").setValue("");
+            this.byId("reference").setValue("");
 
         }
     });

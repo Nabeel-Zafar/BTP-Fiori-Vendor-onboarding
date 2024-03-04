@@ -8,7 +8,7 @@ module.exports = (srv) => {
 
     srv.on('CREATE', 'Vendor', async (req) => {
         const { data } = req;
-        console.log('-----------baby', data)
+        console.log('-----------', data)
         const result = await INSERT.into(Vendor).entries(data);
         return result;
     });

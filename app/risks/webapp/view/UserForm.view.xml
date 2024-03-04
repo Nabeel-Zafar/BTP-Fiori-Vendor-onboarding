@@ -2,6 +2,7 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
    xmlns:core="sap.ui.core"
+   xmlns:l="sap.ui.layout"
    displayBlock="true"
    controllerName="ns.risks.controller.UserForm"
 >
@@ -17,7 +18,7 @@
                id="_IDGenVox2a"
                class="sapUiSmallMargin titleLayout79"
             >
-               <Button icon="sap-icon://customer" text="Register" />
+               <Button icon="sap-icon://customer" text="Register" press="onSubmitUser"/>
             </VBox>
          </HBox>
 
@@ -41,12 +42,14 @@
                      id="first_name"
                      width="250px"
                      placeholder="First Name"
+                     type="Text"
                      class="sapUiSmallMarginEnd"
                   />
                   <Input
                      id="last_name"
                      width="250px"
                      placeholder="Last Name"
+                     type="Text"
                      class="sapUiSmallMarginEnd"
                   />
                </HBox>

@@ -1,0 +1,36 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" controllerName="ns.risks.controller.UsersPage">
+  <Page title="Users List">
+    <content>
+      <Table id="userTable" inset="false" items="{path: '/value'}">
+        <columns>
+          <Column>
+            <Text text="First Name" />
+          </Column>
+          <Column>
+            <Text text="Last Name" />
+          </Column>
+          <Column>
+            <Text text="Email" />
+          </Column>
+          <Column>
+            <Text text="Role" />
+          </Column>
+          <Column>
+            <Text text="Phone Number" />
+          </Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <ObjectIdentifier title="{first_name}" />
+              <ObjectIdentifier title="{last_name}" />
+              <ObjectIdentifier title="{user_email}" />
+              <ObjectIdentifier title="{role}" />
+              <ObjectIdentifier title="{phone_number}" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

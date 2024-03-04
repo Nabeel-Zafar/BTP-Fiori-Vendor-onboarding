@@ -1,7 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    'sap/ui/model/json/JSONModel'
-], function (Controller) {
+    'sap/ui/model/json/JSONModel',
+    "sap/m/MessageBox",
+    "sap/m/MessageToast"
+], function (Controller,MessageToast) {
     "use strict";
 
     return Controller.extend("ns.risks.controller.UserForm", {
@@ -43,18 +45,31 @@ sap.ui.define([
     
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                console.log("Data sent successfully to CAP application.");
+            if (xhr.status === 200 || 201) {
+                // console.log("Data sent successfully to CAP application.");
+                this.clearFormFields();
+                alert("User created successfully");
             } else {
-                console.error("Failed to send data to CAP application. Status code: " + xhr.status);
+                // alert("Failed to create user"+ xhr.status);
+                this.clearFormFields();
+                alert("Failed to send data to CAP application. Status code: " + xhr.status);
             }
         }
-    };
+    }.bind(this);
     
     var jsonData = JSON.stringify(userForm);
     
     xhr.send(jsonData);
 
-        }
+        },
+
+        clearFormFields: function() {
+            this.byId("first_name").setValue(" ");
+            this.byId("last_name").setValue(" ");
+            this.byId("user_email").setValue(" ");
+            this.byId("role").setSelectedKey(" ");
+            this.byId("phone_number").setValue(" ");
+            this.byId("password").setValue("");
+          }
     });
 });

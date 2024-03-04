@@ -17,42 +17,87 @@
                     <Text text="Here you can view the details of vendors associated with Endeavour Energy."/>
                 </items>
             </VBox>
-            <!-- <Table id="vendorTable" items="{/Vendors}">
+            <Table id="vendorTable" items="{/Vendors}">
                 <columns>
-                <Column>
-                        <Text text="Vendor Name"/>
+                    <Column>
+                        <Text text="Name"/>
                     </Column>
                     <Column>
-                        <Text text="BP Number"/>
+                        <Text text="Address"/>
                     </Column>
                     <Column>
-                        <Text text="Requested By"/>
+                        <Text text="Registration Number"/>
                     </Column>
                     <Column>
-                        <Text text="Approved By"/>
+                        <Text text="Company type"/>
                     </Column>
                     <Column>
-                        <Text text="Date Requested"/>
+                        <Text text="Tax Identification Number"/>
                     </Column>
                     <Column>
-                        <Text text="Date Approved"/>
+                        <Text text="Contact person name"/>
                     </Column>
                     <Column>
-                        <Text text="Status"/>
+                        <Text text="Contact person email"/>
+                    </Column>
+                    <Column>
+                        <Text text="Industry"/>
+                    </Column>
+                    <Column>
+                        <Text text="Contact Phone Number"/>
+                    </Column>
+                    <Column>
+                        <Text text="Bank Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="Bank Account Number"/>
+                    </Column>
+                    <Column>
+                        <Text text="Business License Number"/>
+                    </Column>
+                    <Column>
+                        <Text text="Product Offering"/>
+                    </Column>
+                    <Column>
+                        <Text text="Product Description"/>
+                    </Column>
+                     <Column>
+                        <Text text="Additional Comments"/>
+                    </Column>
+                    <Column>
+                        <Text text="Reference"/>
+                    </Column>
+                    <Column>
+                        <Text text="Accpet/Reject"/>
                     </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{Approved}"/>
-                            <Text text="{Rejected}"/>
+                            <ObjectIdentifier title="{company_name}" />
+                            <ObjectIdentifier title="{company_address}" />
+                            <ObjectIdentifier title="{company_type}" />
+                            <ObjectIdentifier title="{tax_number}" />
+                            <ObjectIdentifier title="{contact_person_name}" />
+                            <ObjectIdentifier title="{contact_person_email}" />
+                            <ObjectIdentifier title="{industry}" />
+                            <ObjectIdentifier title="{contact_person_number}" />
+                            <ObjectIdentifier title="{bank_name}" />
+                            <ObjectIdentifier title="{bank_account_number}" />
+                            <ObjectIdentifier title="{license_number}" />
+                            <ObjectIdentifier title="{service_offering}" />
+                            <ObjectIdentifier title="{service_description}" />
+                            <ObjectIdentifier title="{additional_comments}" />
+                            <ObjectIdentifier title="{reference}" />
+                            <core:Icon src="sap-icon://accept" color="Green" />
+                            <core:Icon src="sap-icon://decline" color="Red" />
                         </cells>
                     </ColumnListItem>
                 </items>
                 <noData>
                     <Text text="No data available."/>
                 </noData>
-            </Table> -->
+            </Table>
             <!-- XML view -->
 <List id="vendorList" items="{vendorModel>/Vendors}" itemPress="onVendorListItemPress">
     <items>
