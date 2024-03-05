@@ -11,26 +11,28 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "@sap/ux-specification": "^1.120.4"
+    "@sap/ux-specification": "^1.120.5"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-vendor-oboarding": "cds watch --open vendor-oboarding/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
-    "app/risks"
+    "app/risks",
+    "app/vendor-oboarding"
   ],
   "cds": {
     "requires": {
-        "db": {
-            "kind": "sql"
-        }
+      "db": {
+        "kind": "sql"
+      }
     },
     "impl": "./srv/onboarding-form.js",
     "routes": {
-        "/api/vendors": {
-            "target": "sap.ui.riskmanagement.VendorOnboardingForm"
-        }
+      "/api/vendors": {
+        "target": "sap.ui.riskmanagement.VendorOnboardingForm"
+      }
     }
-}
+  }
 }
