@@ -35,7 +35,7 @@ annotate service.Vendor with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'company_name',
+                Label : '{i18n>CompanyName}',
                 Value : company_name,
             },
             {
