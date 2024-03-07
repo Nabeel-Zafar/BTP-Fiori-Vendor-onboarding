@@ -1,56 +1,78 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
     <VBox>
         <HBox>
             <Label text="Name" width="120px" />
-            <Input value="{/name}" />
+            <Input id="company_name" value="{/name}" />
             <Label text="Address" width="120px" />
-            <Input value="{/address}" />
+            <Input id="company_address" value="{/address}" />
         </HBox>
         <HBox>
             <Label text="Registration Number" width="120px" />
-            <Input value="{/registrationNumber}" />
+            <Input id="registration_number" value="{/registrationNumber}" />
             <Label text="Company Type" width="120px" />
-            <Select>
-                <!-- Populate options dynamically -->
-            </Select>
+            <ComboBox
+                     id="company_type"
+                     width="250px"
+                     placeholder="Company type"
+                     items="{
+					      path: 'companyTypes>/companyTypes',
+					      sorter: { path: 'text' }
+				      }"
+                  >
+                     <core:Item
+                        key="{companyTypes>key}"
+                        text="{companyTypes>text}"
+                     />
+                  </ComboBox>
         </HBox>
         <HBox>
             <Label text="Tax Identification Number" width="120px" />
-            <Input value="{/taxIdNumber}" />
+            <Input id="tax_number" value="{/taxIdNumber}" />
             <Label text="Contact Person Name" width="120px" />
-            <Input value="{/contactPersonName}" />
+            <Input id="contact_person_name" value="{/contactPersonName}" />
         </HBox>
         <HBox>
             <Label text="Contact Person Email" width="120px" />
-            <Input value="{/contactPersonEmail}" />
+            <Input id="contact_person_email" value="{/contactPersonEmail}" />
             <Label text="Industry/Category" width="120px" />
-            <Select>
-                <!-- Populate options dynamically -->
-            </Select>
+            <ComboBox
+                     width="250px"
+                     id="industry"
+                     placeholder="Industry/Category"
+                     items="{
+					      path: 'industry>/industry',
+					      sorter: { path: 'text' }
+				      }"
+                  >
+                     <core:Item
+                        key="{industry>key}"
+                        text="{industry>text}"
+                     />
+                  </ComboBox>
         </HBox>
         <HBox>
             <Label text="Contact Phone Number" width="120px" />
-            <Input value="{/contactPhoneNumber}" />
+            <Input id="contact_person_number" value="{/contactPhoneNumber}" />
             <Label text="Bank Name" width="120px" />
-            <Input value="{/bankName}" />
+            <Input id="bank_name" value="{/bankName}" />
         </HBox>
         <HBox>
             <Label text="Bank Account Number" width="120px" />
-            <Input value="{/bankAccountNumber}" />
+            <Input id="bank_account_number" value="{/bankAccountNumber}" />
             <Label text="Business License Number" width="120px" />
-            <Input value="{/businessLicenseNumber}" />
+            <Input id="license_number" value="{/businessLicenseNumber}" />
         </HBox>
         <HBox>
             <Label text="Product/Service Offering" width="120px" />
-            <TextArea value="{/productServiceOffering}" rows="5" />
+            <TextArea id="service_offering" value="{/productServiceOffering}" rows="5" />
             <Label text="Product/Service Description" width="120px" />
-            <TextArea value="{/productServiceDescription}" rows="5" />
+            <TextArea id="service_description" value="{/productServiceDescription}" rows="5" />
         </HBox>
         <HBox>
             <Label text="Additional Comments" width="120px" />
-            <TextArea value="{/additionalComments}" rows="5" />
+            <TextArea id="additional_comments" value="{/additionalComments}" rows="5" />
             <Label text="Reference" width="120px" />
-            <Input value="{/reference}" />
+            <Input id="reference" value="{/reference}" />
         </HBox>
     </VBox>
 </mvc:View>

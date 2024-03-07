@@ -23,8 +23,28 @@ sap.ui.define([
                     contentHeight: "2000px",
                     beginButton: new Button({
                         type: ButtonType.Emphasized,
-                        text: "OK",
+                        text: "Save",
                         press: function () {
+                            var vendorOnboardingForm = {};
+
+            vendorOnboardingForm.company_name = this.byId("company_name").getValue();
+            vendorOnboardingForm.company_address = this.byId("company_address").getValue();
+            vendorOnboardingForm.registration_number = this.byId("registration_number").getValue();
+            vendorOnboardingForm.company_type = this.byId("company_type").getValue();
+            vendorOnboardingForm.tax_number = this.byId("tax_number").getValue();
+            vendorOnboardingForm.contact_person_name = this.byId("contact_person_name").getValue();
+            vendorOnboardingForm.contact_person_email = this.byId("contact_person_email").getValue();
+            vendorOnboardingForm.industry = this.byId("industry").getValue();
+            vendorOnboardingForm.contact_person_number = this.byId("contact_person_number").getValue();
+            vendorOnboardingForm.bank_name = this.byId("bank_name").getValue();
+            vendorOnboardingForm.bank_account_number = this.byId("bank_account_number").getValue();
+            vendorOnboardingForm.license_number = this.byId("license_number").getValue();
+            vendorOnboardingForm.service_offering = this.byId("service_offering").getValue();
+            vendorOnboardingForm.service_description = this.byId("service_description").getValue();
+            vendorOnboardingForm.additional_comments = this.byId("additional_comments").getValue();
+            vendorOnboardingForm.reference = this.byId("reference").getValue();
+
+            console.log("Vendor Onboarding Form Data:", vendorOnboardingForm);
                             this.oDefaultDialog.close();
                         }.bind(this)
                     }),
