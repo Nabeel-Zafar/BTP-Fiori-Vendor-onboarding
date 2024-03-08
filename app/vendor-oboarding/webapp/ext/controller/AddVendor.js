@@ -52,18 +52,13 @@ sap.ui.define([
                                 additional_comments: oController?.byId("additional_comments").getValue(),
                                 reference: oController?.byId("reference").getValue(),
                             };
-                        
                             console.log("Vendor Onboarding Form Data:", vendorOnboardingForm);
-                        
                             var xhr = new XMLHttpRequest();
-                        
                             // Define the endpoint URL of your CAP application
                             var url = "http://localhost:4004/odata/v4/vendor/Vendor"; // Replace with your actual CAP application URL
-                        
                             // Configure the request
                             xhr.open("POST", url, true);
                             xhr.setRequestHeader("Content-Type", "application/json");
-                        
                             // Define a callback function to handle the response
                             xhr.onreadystatechange = function () {
                                 if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -74,17 +69,15 @@ sap.ui.define([
                                         // Request failed
                                         alert("Failed to send data to CAP application. Status code: " + xhr.status);
                                     }
+                                    // Close the dialog after handling the response
+                                    this.oDefaultDialog.close(); // 'this' still refers to the view context
                                 }
-                            }.bind(this);
-                        
+                            }.bind(this); // binding the callback function to maintain 'this' as the view context
                             // Convert the data to JSON format
                             var jsonData = JSON.stringify(vendorOnboardingForm);
-                        
                             // Send the request with the data
                             xhr.send(jsonData);
-                        
-                            this.oDefaultDialog.close();
-                        }.bind(this)
+                        },
                         
                     }),
                     endButton: new Button({
