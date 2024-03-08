@@ -1,4 +1,6 @@
 using VendorService as service from '../../srv/VendorService';
+annotate service.Vendor with @(odata.draft.enabled:true);
+
 
 annotate service.Vendor with @(
     UI.LineItem : [
@@ -40,22 +42,22 @@ annotate service.Vendor with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'company_address',
+                Label : '{i18n>CompanyAddress}',
                 Value : company_address,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'registration_number',
+                Label : '{i18n>RegistrationNumber}',
                 Value : registration_number,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'company_type',
+                Label : '{i18n>CompanyType}',
                 Value : company_type,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'tax_number',
+                Label : '{i18n>TaxNumber}',
                 Value : tax_number,
             },
             {
@@ -124,11 +126,11 @@ annotate service.Vendor with @(
         },
     ]
 );
-annotate service.Vendor with @(
-    UI.SelectionFields : [
-        company_name,
-    ]
-);
-annotate service.Vendor with {
-    company_name @Common.Label : '{i18n>CompanyName}'
-};
+// annotate service.Vendor with @(
+//     UI.SelectionFields : [
+//         company_name,
+//     ]
+// );
+// annotate service.Vendor with {
+//     company_name @Common.Label : '{i18n>CompanyName}'
+// };

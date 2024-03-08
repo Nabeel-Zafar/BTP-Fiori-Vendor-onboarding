@@ -110,18 +110,6 @@
                     "route": "VendorObjectPage"
                   }
                 }
-              },
-              "content": {
-                "header": {
-                  "actions": {
-                    "1234": {
-                      "press": "vendoroboarding.ext.controller.AddVendor.onAdd",
-                      "visible": true,
-                      "enabled": true,
-                      "text": "Add Vendor"
-                    }
-                  }
-                }
               }
             }
           }
@@ -133,19 +121,7 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Vendor",
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneratedGroup1": {
-                  "actions": {
-                    "123": {
-                      "press": "vendoroboarding.ext.controller.FormSubmission.onSubmit",
-                      "visible": true,
-                      "enabled": true,
-                      "text": "Save"
-                    }
-                  }
-                }
-              }
+              "contextPath": "/Vendor"
             }
           }
         }
