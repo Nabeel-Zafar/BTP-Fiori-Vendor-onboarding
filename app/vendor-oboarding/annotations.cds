@@ -1,7 +1,6 @@
 using VendorService as service from '../../srv/VendorService';
 annotate service.Vendor with @(odata.draft.enabled:true);
 
-
 annotate service.Vendor with @(
     UI.LineItem : [
         {
@@ -26,8 +25,53 @@ annotate service.Vendor with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : 'tax_number',
+            Label : '{i18n>TaxNumber}',
             Value : tax_number,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : contact_person_email,
+            Label : '{i18n>ContactPersonEmail}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : contact_person_name,
+            Label : '{i18n>ContactPersonName}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : contact_person_number,
+            Label : '{i18n>ContactPersonNumber}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : additional_comments,
+            Label : '{i18n>AdditionalComments}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : bank_account_number,
+            Label : '{i18n>BankAccountNumber}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : bank_name,
+            Label : '{i18n>BankName}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : industry,
+            Label : '{i18n>Industry}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : license_number,
+            Label : '{i18n>LicenseNumber}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : reference,
+            Label : '{i18n>Reference}',
         },
     ]
 );
@@ -126,11 +170,3 @@ annotate service.Vendor with @(
         },
     ]
 );
-// annotate service.Vendor with @(
-//     UI.SelectionFields : [
-//         company_name,
-//     ]
-// );
-// annotate service.Vendor with {
-//     company_name @Common.Label : '{i18n>CompanyName}'
-// };
