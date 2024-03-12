@@ -2,6 +2,9 @@
 _out
 *.db
 *.sqlite
+# Ignore SQLite temporary files
+*.sqlite-shm
+*.sqlite-wal
 connection.properties
 default-*.json
 .cdsrc-private.json
