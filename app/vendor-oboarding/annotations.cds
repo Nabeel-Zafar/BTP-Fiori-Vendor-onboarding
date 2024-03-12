@@ -106,57 +106,57 @@ annotate service.Vendor with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'contact_person_name',
+                Label : '{i18n>ContactPersonName}',
                 Value : contact_person_name,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'contact_person_email',
+                Label : '{i18n>ContactPersonEmail}',
                 Value : contact_person_email,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'industry',
+                Label : '{i18n>Industry}',
                 Value : industry,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'contact_person_number',
+                Label : '{i18n>ContactPersonNumber}',
                 Value : contact_person_number,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'bank_name',
+                Label : '{i18n>BankName}',
                 Value : bank_name,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'bank_account_number',
+                Label : '{i18n>BankAccountNumber}',
                 Value : bank_account_number,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'license_number',
+                Label : '{i18n>LicenseNumber}',
                 Value : license_number,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'service_offering',
+                Label : '{i18n>ServiceOffering}',
                 Value : service_offering,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'service_description',
+                Label : '{i18n>ServiceDescription}',
                 Value : service_description,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'additional_comments',
+                Label : '{i18n>AdditionalComments}',
                 Value : additional_comments,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'reference',
+                Label : '{i18n>Reference}',
                 Value : reference,
             },
         ],
@@ -170,3 +170,71 @@ annotate service.Vendor with @(
         },
     ]
 );
+annotate service.Vendor with {
+    service_offering @UI.MultiLineText : true
+};
+annotate service.Vendor with {
+    service_description @UI.MultiLineText : true
+};
+annotate service.Vendor with {
+    additional_comments @UI.MultiLineText : true
+};
+annotate service.Vendor with @(
+    UI.HeaderInfo : {
+        TypeName : '',
+        TypeNamePlural : '',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : company_name,
+        },
+        Initials : bank_name,
+    }
+);
+annotate service.Vendor with {
+    company_name @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    registration_number @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    company_address @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    company_type @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    tax_number @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    contact_person_name @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    contact_person_email @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    industry @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    contact_person_number @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    bank_name @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    bank_account_number @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    license_number @Common.FieldControl : #Mandatory
+};
+annotate service.Vendor with {
+    service_offering @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    service_description @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    additional_comments @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    reference @Common.FieldControl : #Optional
+};
