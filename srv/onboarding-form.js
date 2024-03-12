@@ -21,7 +21,9 @@ module.exports = (srv) => {
         // Validate and process the incoming data as needed
         // Persist the data in the database
         console.log("req.data",req.data) ;
-        const result = await INSERT.into('sap.ui.riskmanagement.VendorOnboardingForm').entries(req.data);
+        // const result = await INSERT.into('sap.ui.riskmanagement.VendorOnboardingForm').entries(req.data);
+        const result = await srv.insert(req.data).into('sap.ui.riskmanagement.VendorOnboardingForm');
+
         return result;
     });
 };

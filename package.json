@@ -25,7 +25,8 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sql"
+        "kind": "sqlite",
+        "credentials": { "url": "db.sqlite" }
       }
     },
     "impl": "./srv/onboarding-form.js",
