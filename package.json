@@ -7,30 +7,38 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "axios": "^1.6.7",
+    "express": "^4",
+    "jsonwebtoken": "^9.0.2",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "@sap/ux-specification": "^1.120.4"
+    "@sap/ux-specification": "^1.120.5"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-vendor-oboarding": "cds watch --open vendor-oboarding/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
-    "app/risks"
+    "app/risks",
+    "app/vendor-oboarding"
   ],
   "cds": {
     "requires": {
-        "db": {
-            "kind": "sql"
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
         }
+      }
     },
     "impl": "./srv/onboarding-form.js",
     "routes": {
-        "/api/vendors": {
-            "target": "sap.ui.riskmanagement.VendorOnboardingForm"
-        }
+      "/api/vendors": {
+        "target": "sap.ui.riskmanagement.VendorOnboardingForm"
+      }
     }
-}
+  }
 }

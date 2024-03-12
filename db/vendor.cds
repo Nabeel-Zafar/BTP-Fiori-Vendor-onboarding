@@ -1,6 +1,7 @@
 namespace my.app;
 
 entity Vendor {
+    key ID : UUID;
     company_name            : String;
     company_address         : String;
     registration_number     : String;
