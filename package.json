@@ -7,7 +7,10 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "axios": "^1.6.7",
+    "express": "^4",
+    "jsonwebtoken": "^9.0.2",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -26,7 +29,9 @@
     "requires": {
       "db": {
         "kind": "sqlite",
-        "credentials": { "url": "db.sqlite" }
+        "credentials": {
+          "url": "db.sqlite"
+        }
       }
     },
     "impl": "./srv/onboarding-form.js",
