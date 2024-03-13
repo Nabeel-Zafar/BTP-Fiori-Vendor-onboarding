@@ -97,4 +97,20 @@ module.exports = (srv) => {
         const result = await INSERT.into(Vendor).entries(data);
         return result;
     });
+
+    srv.on('ApproveOrRejectAction', async (req) => {
+        const { vendorId, status } = req.data.input;
+
+        console.log("Custom Endpoint Hit: ", vendorId, status)
+
+        // Example logic: Update the status of a vendor based on the provided vendorId and Status
+        // This is a placeholder for your actual logic
+        // const updatedVendor = await UPDATE(Vendor)
+        //     .set({ status: Status })
+        //     .where({ id: vendorId })
+        //     .execute();
+
+        // Return the result of the operation
+        return { result: `Vendor with ID ${vendorId} status updated to ${status}` };
+    });
 };
