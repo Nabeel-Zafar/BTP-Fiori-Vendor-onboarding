@@ -80,6 +80,13 @@ annotate service.Vendor with @(
         },
         {
             $Type : 'UI.DataField',
+            Value : status,
+            Label : 'Status',
+            Criticality : criticality,
+            CriticalityRepresentation : #WithIcon,
+        },
+        {
+            $Type : 'UI.DataField',
             Value : service_description,
             Label : 'Service Description',
         },
@@ -173,11 +180,6 @@ annotate service.Vendor with @(
                 $Type : 'UI.DataField',
                 Label : '{i18n>Reference}',
                 Value : reference,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Status',
-                Value : status,
             },
         ],
     },

@@ -21,4 +21,6 @@ entity Vendor {
 
         @cds.hidden
         status                : String default 'Pending';
+        criticality      : Integer;
+
 }

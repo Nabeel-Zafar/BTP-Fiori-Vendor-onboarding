@@ -126,7 +126,6 @@ module.exports = (srv) => {
       };
   
       // Make the POST request to the SAP Build Process Automation API
-      console.log("payload", payload);
       const apiResponse = await axios.post(
         "https://spa-api-gateway-bpi-us-prod.cfapps.us10.hana.ondemand.com/workflow/rest/v1/workflow-instances",
         payload,
@@ -137,9 +136,7 @@ module.exports = (srv) => {
           },
         }
       );
-  
-      console.log("API Response:", apiResponse.data);
-  
+    
       // Proceed with the original logic for creating the Vendor entity
       const result = await INSERT.into(Vendor).entries(data);
       return result;
@@ -148,11 +145,28 @@ module.exports = (srv) => {
       throw error;
     }
   });
-  
+
+  function determineStatusCriticality(status) {
+    switch (status) {
+        case 'Approved':
+            return 3;
+        case 'Rejected':
+            return 1;
+        case 'Pending':
+            return 2;
+        default:
+            return 0;
+    }
+}
+
+  srv.after("READ", "Vendor", (vendors) => {
+    vendors.forEach(vendor => {
+       vendor.criticality = determineStatusCriticality(vendor.status);
+    });
+   });
 
   srv.on("ApproveOrRejectAction", async (req) => {
     const { vendorId, status } = req.data.input;
-    console.log("Custom Endpoint Hit: ", vendorId, status);
     // Use cds.transaction to perform the update operation
     await cds.transaction(async (tx) => {
         const affectedRows = await tx.run(
@@ -160,7 +174,6 @@ module.exports = (srv) => {
                 .set({ status: status })
                 .where({ ID: vendorId })
         );
-        console.log(`Vendor with ID ${vendorId} status updated to ${status}. Affected rows: ${affectedRows}`);
     });
     // Return the result of the operation
     return { result: `Vendor with ID ${vendorId} status updated to ${status}` };
