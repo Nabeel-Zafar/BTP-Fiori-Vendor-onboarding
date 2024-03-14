@@ -119,8 +119,8 @@ module.exports = (srv) => {
             service_description: data.service_description || "",
             additional_comments: data.additional_comments || "",
             reference: data.reference || "",
-            approve: "approve",
-            reject: "reject",
+            approve: "Approved",
+            reject: "Rejected",
           },
         },
       };
@@ -152,17 +152,18 @@ module.exports = (srv) => {
 
   srv.on("ApproveOrRejectAction", async (req) => {
     const { vendorId, status } = req.data.input;
-
     console.log("Custom Endpoint Hit: ", vendorId, status);
-
-    // Example logic: Update the status of a vendor based on the provided vendorId and Status
-    // This is a placeholder for your actual logic
-    const updatedVendor = await UPDATE(Vendor)
-        .set({ status: Status })
-        .where({ id: vendorId })
-        .execute();
-
+    // Use cds.transaction to perform the update operation
+    await cds.transaction(async (tx) => {
+        const affectedRows = await tx.run(
+            UPDATE(Vendor)
+                .set({ status: status })
+                .where({ ID: vendorId })
+        );
+        console.log(`Vendor with ID ${vendorId} status updated to ${status}. Affected rows: ${affectedRows}`);
+    });
     // Return the result of the operation
     return { result: `Vendor with ID ${vendorId} status updated to ${status}` };
-  });
+});
+   
 };
