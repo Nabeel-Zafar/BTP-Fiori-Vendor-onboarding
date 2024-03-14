@@ -102,6 +102,7 @@ module.exports = (srv) => {
           "us10.ef5e34f8trial.vendoronboardingv1.accessRequestTriggerForm",
         context: {
           userconfig: {
+            ID: data.ID || "",
             company_name: data.company_name || "",
             company_address: data.company_address || "",
             registration_number: data.registration_number || "",
@@ -118,6 +119,8 @@ module.exports = (srv) => {
             service_description: data.service_description || "",
             additional_comments: data.additional_comments || "",
             reference: data.reference || "",
+            approve: "approve",
+            reject: "reject",
           },
         },
       };
@@ -154,10 +157,10 @@ module.exports = (srv) => {
 
     // Example logic: Update the status of a vendor based on the provided vendorId and Status
     // This is a placeholder for your actual logic
-    // const updatedVendor = await UPDATE(Vendor)
-    //     .set({ status: Status })
-    //     .where({ id: vendorId })
-    //     .execute();
+    const updatedVendor = await UPDATE(Vendor)
+        .set({ status: Status })
+        .where({ id: vendorId })
+        .execute();
 
     // Return the result of the operation
     return { result: `Vendor with ID ${vendorId} status updated to ${status}` };
