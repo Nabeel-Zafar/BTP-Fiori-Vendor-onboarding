@@ -102,6 +102,7 @@ module.exports = (srv) => {
           "us10.ef5e34f8trial.vendoronboardingv1.accessRequestTriggerForm",
         context: {
           userconfig: {
+            ID: data.ID || "",
             company_name: data.company_name || "",
             company_address: data.company_address || "",
             registration_number: data.registration_number || "",
@@ -118,6 +119,8 @@ module.exports = (srv) => {
             service_description: data.service_description || "",
             additional_comments: data.additional_comments || "",
             reference: data.reference || "",
+            approve: "approve",
+            reject: "reject",
           },
         },
       };
