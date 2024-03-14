@@ -18,4 +18,5 @@ entity Vendor {
     service_description     : String;
     additional_comments     : String;
     reference               : String;
+    status: String  = 'Pending';
 }
