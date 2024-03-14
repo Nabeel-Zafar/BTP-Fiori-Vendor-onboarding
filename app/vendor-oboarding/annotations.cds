@@ -73,6 +73,21 @@ annotate service.Vendor with @(
             Value : reference,
             Label : '{i18n>Reference}',
         },
+        {
+            $Type : 'UI.DataField',
+            Value : status,
+            Label : 'Status',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : service_description,
+            Label : 'Service Description',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : service_offering,
+            Label : 'Service Offering',
+        },
     ]
 );
 annotate service.Vendor with @(
@@ -159,6 +174,11 @@ annotate service.Vendor with @(
                 Label : '{i18n>Reference}',
                 Value : reference,
             },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Status',
+                Value : status,
+            },
         ],
     },
     UI.Facets : [
@@ -237,4 +257,7 @@ annotate service.Vendor with {
 };
 annotate service.Vendor with {
     reference @Common.FieldControl : #Optional
+};
+annotate service.Vendor with {
+    status @Common.FieldControl : #ReadOnly
 };
