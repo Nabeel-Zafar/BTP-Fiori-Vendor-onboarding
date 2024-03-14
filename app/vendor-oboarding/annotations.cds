@@ -261,3 +261,11 @@ annotate service.Vendor with {
 annotate service.Vendor with {
     status @Common.FieldControl : #ReadOnly
 };
+annotate service.Vendor with @(
+    UI.SelectionFields : [
+        status,
+    ]
+);
+annotate service.Vendor with {
+    status @Common.Label : '{i18n>ApprovalStatus}'
+};
