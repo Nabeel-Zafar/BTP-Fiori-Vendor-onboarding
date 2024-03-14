@@ -10,6 +10,21 @@ annotate service.Vendor with @(
         },
         {
             $Type : 'UI.DataField',
+            Value : contact_person_name,
+            Label : '{i18n>ContactPersonName}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : contact_person_email,
+            Label : '{i18n>ContactPersonEmail}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : status,
+            Label : 'Status',
+        },
+        {
+            $Type : 'UI.DataField',
             Label : '{i18n>CompanyAddress}',
             Value : company_address,
         },
@@ -27,16 +42,6 @@ annotate service.Vendor with @(
             $Type : 'UI.DataField',
             Label : '{i18n>TaxNumber}',
             Value : tax_number,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : contact_person_email,
-            Label : '{i18n>ContactPersonEmail}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : contact_person_name,
-            Label : '{i18n>ContactPersonName}',
         },
         {
             $Type : 'UI.DataField',
@@ -72,11 +77,6 @@ annotate service.Vendor with @(
             $Type : 'UI.DataField',
             Value : reference,
             Label : '{i18n>Reference}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : status,
-            Label : 'Status',
         },
         {
             $Type : 'UI.DataField',
